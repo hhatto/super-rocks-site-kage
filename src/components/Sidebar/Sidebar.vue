@@ -1,14 +1,6 @@
 <template>
   <div
-    class="
-      mx-2
-      mb-auto
-      flex flex-col
-      items-center
-      border border-secondary
-      px-2
-      py-8
-    "
+    class="mx-2 mb-auto flex flex-col items-center border border-secondary px-2 py-8"
   >
     <div class="w-auto items-center lg:mx-20">
       <img
