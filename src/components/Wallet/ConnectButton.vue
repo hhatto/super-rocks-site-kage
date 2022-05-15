@@ -42,6 +42,7 @@ export default {
       const currentAddress = await newProvider.getSigner().getAddress()
       this.walletAddress = currentAddress
       store.commit('wallet/setWalletAddress', { walletAddress: currentAddress })
+      console.log('set:', store.state.wallet.walletAddress)
     },
   },
 }

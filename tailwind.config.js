@@ -8,9 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkPrimary: '#0d0f12',
-        darkSecondary: '#1E3A8A',
-        darkThird: '#1F2937',
+        primary: '#0d0f12',
+        secondary: '#3A4158',
       },
       fontFamily: {
         mono: ['IBM Plex Mono', 'monospace'],

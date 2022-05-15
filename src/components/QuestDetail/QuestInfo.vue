@@ -1,5 +1,5 @@
 <template>
-  <div class="border p-4">
+  <div class="border border-secondary p-4">
     <div class="mb-4">
       <div class="text-2xl">Period</div>
       <div class="text-gray-400">TBD</div>

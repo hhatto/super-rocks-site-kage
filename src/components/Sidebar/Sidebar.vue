@@ -1,5 +1,15 @@
 <template>
-  <div class="mx-2 mb-auto flex flex-col items-center border px-2 py-8">
+  <div
+    class="
+      mx-2
+      mb-auto
+      flex flex-col
+      items-center
+      border border-secondary
+      px-2
+      py-8
+    "
+  >
     <div class="w-auto items-center lg:mx-20">
       <img
         src="/assets/avator.png"
@@ -19,7 +29,7 @@
     <div>
       <a href="/members">{{ members || '-' }} Members</a>
     </div>
-    <div class="m-2 border p-2 px-4">
+    <div class="m-2 border border-secondary p-2 px-4">
       <a href="/join">Join</a>
     </div>
     <div>

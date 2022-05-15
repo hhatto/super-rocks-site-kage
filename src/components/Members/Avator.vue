@@ -1,17 +1,8 @@
 <template>
-  <div class="m-8 flex w-96 items-center">
-    <img
-      v-if="imgSrc"
-      class="mr-8 rounded-full"
-      style="width: 75px; height: 75px"
-      :src="imgSrc"
-    />
-    <div
-      v-else
-      class="mr-8 rounded-full bg-blue-400"
-      style="width: 75px; height: 75px"
-    />
-    <div class="w-64 overflow-hidden text-ellipsis" v-if="displayName">
+  <div class="m-8 flex items-center">
+    <img v-if="imgSrc" class="rounded-full" :style="style" :src="imgSrc" />
+    <div v-else class="rounded-full bg-blue-400" :style="style" />
+    <div class="ml-8 w-64 overflow-hidden text-ellipsis" v-if="displayName">
       {{ name || accountAddress }}
     </div>
   </div>
@@ -22,14 +13,16 @@ import { getAccount } from '../../fixtures/dev-for-apps'
 
 export default {
   name: 'Avator',
-  props: ['accountAddress', 'displayName'],
+  props: ['accountAddress', 'displayName', 'height', 'width'],
   data() {
     return {
       imgSrc: null,
       name: '',
+      style: `width: ${this.width || 75}px; height: ${this.height || 75}px;`,
     }
   },
   async created() {
+    console.log(this.accountAddress)
     const res = await getAccount(this.accountAddress)
     this.imgSrc = res[0]?.portrait?.formats.thumbnail.url
     this.name = res[0]?.name
