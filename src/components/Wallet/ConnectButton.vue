@@ -1,5 +1,5 @@
 <template>
-  <div class="border rounded px-4 py-2">
+  <div class="rounded border px-4 py-2">
     <div v-if="walletAddress">
       <a href="/me">{{ walletAddress }}</a>
     </div>
@@ -37,7 +37,6 @@ export default {
         connectedProvider,
         (p) => new providers.Web3Provider(p)
       )
-      console.log(store)
       store.commit('wallet/setProvider', { provider: newProvider })
 
       const currentAddress = await newProvider.getSigner().getAddress()
