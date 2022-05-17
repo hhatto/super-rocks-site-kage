@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Default.astro'
 
-import Hero from '@components/Home/Hero.astro'
 import Apps from '@components/Home/Apps/Apps.astro'
 import JoinClub from '@components/Join/JoinClub.astro'
 import Sidebar from '@components/Sidebar/Sidebar.vue'
@@ -10,8 +9,7 @@ import Sidebar from '@components/Sidebar/Sidebar.vue'
 <Layout metaTitle="Dev Protocol | An open protocol for Creator Economy">
   <div class="flex justify-center">
     <Sidebar client:load />
-    <div width="600">
-      <Hero />
+    <div>
       <JoinClub />
     </div>
   </div>
