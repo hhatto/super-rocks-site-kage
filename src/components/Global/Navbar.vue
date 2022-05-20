@@ -28,18 +28,7 @@
         </button>
         <ul
           v-if="menuIsOpen"
-          class="
-            absolute
-            right-0
-            z-50
-            mt-2
-            w-48
-            rounded
-            border border-slate-800
-            bg-black
-            p-2
-            shadow
-          "
+          class="absolute right-0 z-50 mt-2 w-48 rounded border border-slate-800 bg-black p-2 shadow"
         >
           <li>
             <a

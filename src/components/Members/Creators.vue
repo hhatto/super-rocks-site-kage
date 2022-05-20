@@ -1,12 +1,12 @@
 <template>
   <div class="bg-cover bg-center">
     <h3 class="my-8 text-2xl">Creators</h3>
-    <div v-if="creators.length > 0" class="rounded border border-secondary">
+    <div v-if="creators.length > 0" class="border-secondary rounded border">
       <ul role="list">
         <li
           v-for="creator in creators"
           :key="creator.ownerAddress"
-          class="flex items-center border border-x-0 border-t-0 border-secondary outline-white first:border-solid last:border-none"
+          class="border-secondary flex items-center border border-x-0 border-t-0 outline-white first:border-solid last:border-none"
         >
           <Avator
             :accountAddress="creator.accountAddress"
