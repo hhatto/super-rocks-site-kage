@@ -22,7 +22,6 @@ export default {
     }
   },
   async created() {
-    console.log(this.accountAddress)
     const res = await getAccount(this.accountAddress)
     this.imgSrc = res[0]?.portrait?.formats.thumbnail.url
     this.name = res[0]?.name
