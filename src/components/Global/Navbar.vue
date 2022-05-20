@@ -8,9 +8,7 @@
       >
     </h1>
     <div class="flex items-center gap-4">
-      <button disabled class="rounded border border-white py-2 px-4 opacity-20">
-        <span>Sign in</span>
-      </button>
+      <ConnectButton client:only="vue" />
       <div class="relative" ref="menu">
         <button class="rounded border p-2" @click="toggle">
           <svg
@@ -30,7 +28,18 @@
         </button>
         <ul
           v-if="menuIsOpen"
-          class="absolute right-0 z-50 mt-2 w-48 rounded border border-slate-800 bg-black p-2 shadow"
+          class="
+            absolute
+            right-0
+            z-50
+            mt-2
+            w-48
+            rounded
+            border border-slate-800
+            bg-black
+            p-2
+            shadow
+          "
         >
           <li>
             <a
@@ -58,6 +67,8 @@
 </template>
 
 <script>
+import ConnectButton from '../Wallet/ConnectButton.vue'
+
 export default {
   data() {
     return {
@@ -68,6 +79,9 @@ export default {
     toggle() {
       this.menuIsOpen = !this.menuIsOpen
     },
+  },
+  components: {
+    ConnectButton,
   },
 }
 </script>

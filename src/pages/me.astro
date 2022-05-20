@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Default.astro'
+
+import Apps from '@components/Home/Apps/Apps.astro'
+import Sidebar from '@components/Sidebar/Sidebar.vue'
+import Badges from '@components/Badges/Badges.astro'
+---
+
+<Layout metaTitle="Dev Protocol | An open protocol for Creator Economy">
+  <div class="flex justify-center">
+    <Sidebar client:load />
+    <Badges />
+  </div>
+</Layout>
