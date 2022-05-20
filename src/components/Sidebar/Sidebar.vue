@@ -23,29 +23,7 @@
       <nav
         :aria-disabled="toggleOpen"
         :style="{ transform: toggleOpen ? 'translateX(0)' : '' }"
-        class="
-          fixed
-          inset-0
-          max-h-screen
-          translate-x-[-100vw]
-          overflow-y-hidden
-          scroll-smooth
-          rounded
-          border-stone-50/30
-          bg-zinc-900
-          transition-transform
-          duration-100
-          hover:overflow-auto
-          md:max-h-[calc(100vh-6rem)]
-          lg:relative
-          lg:inset-auto
-          lg:mx-auto
-          lg:max-w-none
-          lg:translate-x-0
-          lg:border
-          lg:bg-slate-50/[.06]
-          lg:backdrop-blur-3xl
-        "
+        class="fixed inset-0 max-h-screen translate-x-[-100vw] overflow-y-hidden scroll-smooth rounded border-stone-50/30 bg-zinc-900 transition-transform duration-100 hover:overflow-auto md:max-h-[calc(100vh-6rem)] lg:relative lg:inset-auto lg:mx-auto lg:max-w-none lg:translate-x-0 lg:border lg:bg-slate-50/[.06] lg:backdrop-blur-3xl"
       >
         <button
           class="mt-4 rounded-r-full bg-white text-black lg:hidden"
@@ -91,16 +69,7 @@
             <a href="/members">{{ members || '-' }} members</a>
           </div>
           <aside
-            class="
-              grid
-              w-full
-              grid-cols-[1fr_auto]
-              justify-between
-              rounded
-              border border-stone-50/30
-              font-c-sans
-              text-sm
-            "
+            class="grid w-full grid-cols-[1fr_auto] justify-between rounded border border-stone-50/30 font-c-sans text-sm"
           >
             <h3 class="border-b border-stone-50/30 p-2 opacity-20">
               Club Allocation
