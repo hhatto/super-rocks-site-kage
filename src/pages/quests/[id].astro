@@ -14,7 +14,9 @@ export function getStaticPaths() {
 ---
 
 <Layout metaTitle="D Club | Quest">
-  <div class="flex justify-center">
+  <div
+    class="lg:container relative mx-auto lg:pt-12 grid lg:gap-12 lg:grid-cols-[minmax(290px,_1fr)_4fr]"
+  >
     <Sidebar client:load />
     <QuestDetail
       id="quest_starter"
