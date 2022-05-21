@@ -80,6 +80,7 @@
           </aside>
           <a class="rounded border p-2 px-4 opacity-20" href="/join">Join</a>
           <div class="grid w-full gap-6">
+            <a class="opacity-20" href="/quests">Quests</a>
             <a class="opacity-20">Perks</a>
             <a class="opacity-20">Updates</a>
             <a class="opacity-20">Vote</a>
