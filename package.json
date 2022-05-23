@@ -1,5 +1,5 @@
 {
-  "name": "devprotocol",
+  "name": "clubs",
   "version": "0.11.0",
   "private": true,
   "scripts": {
@@ -14,9 +14,11 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@astrojs/renderer-vue": "^0.2.1",
-    "astro": "^0.21.13",
+    "@astrojs/tailwind": "^0.2.1",
+    "@astrojs/vue": "^0.1.4",
+    "astro": "1.0.0-beta.28",
     "autoprefixer": "^10.4.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^16.0.3",
@@ -32,9 +34,19 @@
     "remark-cli": "^10.0.1",
     "tailwindcss": "^3.0.7"
   },
-  "description": "Dev Protocol's open-source website, built with Astro",
-  "repository": "https://github.com/WebXDAO/devprotocol.xyz.git",
-  "author": "WebXDAO",
+  "repository": "https://github.com/dev-protocol/clubs.git",
+  "author": "",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@devprotocol/dev-kit": "^6.0.9",
+    "@devprotocol/util-ts": "^2.2.1",
+    "@metamask/detect-provider": "^1.2.0",
+    "bignumber.js": "^9.0.2",
+    "ethers": "^5.6.5",
+    "ramda": "^0.28.0",
+    "swiper": "^8.1.4",
+    "vue": "3.2.26",
+    "vuex": "^4.0.2",
+    "web3modal": "^1.9.7"
+  }
 }

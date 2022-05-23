@@ -1,48 +1,45 @@
 ---
-import Layout from '../layouts/Default.astro'
+import Layout from '@layouts/Default.astro'
 
-import Hero from '@components/Home/Hero.astro'
-import Why from '@components/Home/Heros/Why.astro'
-import How from '@components/Home/Heros/How.astro'
-import Vision from '@components/Home/Vision.astro'
-import Creators from '@components/Home/Heros/Creators.astro'
-import Patrons from '@components/Home/Heros/Patrons.astro'
-import DevToken from '@components/Home/Heros/Tokens/DevToken.astro'
-import MaxieToken from '@components/Home/Heros/Tokens/MaxieToken.astro'
-import Apps from '@components/Home/Apps/Apps.astro'
-
-import Backers from '@components/Home/Sections/Backers.astro'
-import Blog from '@components/Home/Sections/Blog.astro'
-
-import SuccessStories from '../components/Home/SuccessStories.vue'
-
-import L2 from '@components/Home/Banners/L2.astro'
+import Sidebar from '@components/Sidebar/Sidebar.vue'
+import Footer from '@components/Global/Footer.astro'
+import Hero from '@components/Home/Hero.vue'
+import JoinClub from '@components/Join/JoinClub.astro'
 ---
 
-<Layout metaTitle="Dev Protocol | An open protocol for Creator Economy">
-  <Hero />
-  <DevToken />
-  <MaxieToken />
-  <article class="mt-10 lg:mt-20">
-    <div class="grid gap-18 md:gap-32 my-28">
-      <Why />
-      <How />
+<Layout metaTitle="">
+  <div class="relative">
+    <div class="absolute w-full h-[24rem] lg:h-[38rem]">
+      <Hero client:load />
     </div>
-    <Vision />
-    <Apps />
-    <div class="grid gap-y-20 mt-20">
-      <L2 />
-      <Creators />
-      <hr class="h-2 mx-auto rounded-sm dark:border-gray-600" style="width: 70%"
-      />
-      <SuccessStories client:visible />
-      <hr class="h-2 mx-auto rounded-sm dark:border-gray-600" style="width: 70%"
-      />
-      <Patrons />
+    <div
+      class="lg:container relative mx-auto lg:pt-12 grid lg:gap-12 lg:grid-cols-[minmax(290px,_1fr)_4fr]"
+    >
+      <Sidebar client:load />
+      <article class="grid gap-10 lg:gap-20">
+        <header
+          class="min-h-[24rem] lg:min-h-[38rem] lg:-mt-12 flex justify-center items-center"
+        >
+          <h1
+            class="max-w-3xl mx-4 text-3xl lg:text-4xl font-extrabold text-justify"
+          >
+            Join the DAO that makes the next 1000 years
+          </h1>
+        </header>
+        <section class="px-4 grid gap-12 grid-cols-1">
+          <img src="/assets/preview/1.png" />
+          <img src="/assets/preview/2.png" />
+          <img src="/assets/preview/3.png" />
+          <img src="/assets/preview/4.png" />
+          <img src="/assets/preview/5.png" />
+          <img src="/assets/preview/6.png" />
+          <img src="/assets/preview/7.png" />
+          <JoinClub />
+          <img src="/assets/preview/10.png" />
+          <img src="/assets/preview/11.png" />
+        </section>
+      </article>
     </div>
-  </article>
-  <aside>
-    <Backers />
-    <Blog client:only />
-  </aside>
+  </div>
+  <Footer />
 </Layout>
