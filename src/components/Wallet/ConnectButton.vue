@@ -13,8 +13,6 @@ import { providers } from 'ethers'
 import detectEthereumProvider from '@metamask/detect-provider'
 import { whenDefined } from '@devprotocol/util-ts'
 
-import { store } from '../../store'
-
 export default {
   name: 'ConnectButton',
   data() {
@@ -28,7 +26,7 @@ export default {
     })
     return {
       modalProvider,
-      walletAddress: store.state.wallet.walletAddress,
+      walletAddress: '',
     }
   },
   async mounted() {
@@ -59,11 +57,9 @@ export default {
         connectedProvider,
         (p) => new providers.Web3Provider(p)
       )
-      store.commit('wallet/setProvider', { provider: newProvider })
 
       const currentAddress = await newProvider.getSigner().getAddress()
       this.walletAddress = currentAddress
-      store.commit('wallet/setWalletAddress', { walletAddress: currentAddress })
     },
   },
 }
