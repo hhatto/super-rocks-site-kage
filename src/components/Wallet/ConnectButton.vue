@@ -18,21 +18,43 @@ import { store } from '../../store'
 export default {
   name: 'ConnectButton',
   data() {
+    const modalProvider = new Web3Modal({
+      providerOptions: {
+        injected: {
+          package: detectEthereumProvider(),
+        },
+      },
+      cacheProvider: true,
+    })
     return {
+      modalProvider,
       walletAddress: store.state.wallet.walletAddress,
+    }
+  },
+  async mounted() {
+    const web3ForInjected = await detectEthereumProvider()
+    if (!web3ForInjected) {
+      this.web3Modal.clearCachedProvider()
+      return
+    }
+
+    if (
+      this.modalProvider.cachedProvider === 'injected' &&
+      web3ForInjected.selectedAddress
+    ) {
+      const connectedProvider = await this.modalProvider.connect()
+      const newProvider = whenDefined(
+        connectedProvider,
+        (p) => new providers.Web3Provider(p)
+      )
+
+      const currentAddress = await newProvider.getSigner().getAddress()
+      this.walletAddress = currentAddress
     }
   },
   methods: {
     async connect() {
-      const modalProvider = new Web3Modal({
-        providerOptions: {
-          injected: {
-            package: detectEthereumProvider(),
-          },
-        },
-        cacheProvider: false,
-      })
-      const connectedProvider = await modalProvider.connect()
+      const connectedProvider = await this.modalProvider.connect()
       const newProvider = whenDefined(
         connectedProvider,
         (p) => new providers.Web3Provider(p)
